@@ -1,17 +1,4 @@
 /* Base */
-kiwiprod-title {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
-    color: #27A2DB;
-}
-title-dots {
-    font-weight: bold;
-    font-size: 70px;
-    color: #27A2DB;
-}
 body {
   line-height: 1.7;
   color: gray;
