@@ -27,7 +27,26 @@
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-   <div id="overlayer"></div>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("应用程序名称", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("主页", "Index", "Home", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+
+    <div id="overlayer"></div>
     @*<div class="loader">
             <div class="spinner-border text-primary" role="status">
                 <span class="sr-only">Loading...</span>
@@ -53,7 +72,6 @@
                             <a href="../Home/Index" class="mb-0">
                                 <kiwiprod-title style="position: relative">Kiwiprod</kiwiprod-title>
                                 <title-dots style="position: relative; left: -35px; top:20px">...</title-dots>
-                                <span class="text-primary">.</span>
                             </a>
                         </h1>
                     </div>
@@ -74,11 +92,13 @@
                 </div>
             </div>
         </header>
-     
-        
+
+
         <p>sdiuegfiygyg</p>
 
-   
+        @*<div class="footer py-5 text-center">
+
+            <hr />*@
         <footer>
             <p>&copy; @DateTime.Now.Year - kiwiprod</p>
         </footer>
@@ -87,15 +107,23 @@
 
 
 
+
+
+
+
+    @*<div class="container body-content">
+
+        </div>*@
+
     @RenderBody()
-    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery-3.5.1.min.js"></script>
     <script src="~/js/jquery-ui.js"></script>
     <script src="~/js/popper.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/owl.carousel.min.js"></script>
     <script src="~/js/jquery.countdown.min.js"></script>
     <script src="~/js/bootstrap-datepicker.min.js"></script>
-    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous"></script>
     <script src="~/js/aos.js"></script>
     <script src="~/js/jquery.fancybox.min.js"></script>
     <script src="~/js/jquery.sticky.js"></script>
