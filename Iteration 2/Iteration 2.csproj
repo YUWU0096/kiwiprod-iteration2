@@ -194,6 +194,36 @@
     <Content Include="fonts\icomoon\Read Me.txt" />
     <Content Include="fonts\icomoon\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\about_1.jpg" />
+    <Content Include="images\arrow-left-bl.png" />
+    <Content Include="images\austin-distel-gUIJ0YszPig-unsplash.png" />
+    <Content Include="images\do-ui-kit-1-6-overview.jpg" />
+    <Content Include="images\do_ui_kit_download_cta_floating_devices-2x.png" />
+    <Content Include="images\do_ui_kit_hero_floating_devices-2x.png" />
+    <Content Include="images\evangeline-shaw-VLkoOabAxqw-unsplash.png" />
+    <Content Include="images\frontpage_infographic.png" />
+    <Content Include="images\hero_1.jpg" />
+    <Content Include="images\img_1.jpg" />
+    <Content Include="images\img_2.jpg" />
+    <Content Include="images\img_3.jpg" />
+    <Content Include="images\landing_1.png" />
+    <Content Include="images\ml_image.png" />
+    <Content Include="images\person_1.jpg" />
+    <Content Include="images\person_2.jpg" />
+    <Content Include="images\person_3.jpg" />
+    <Content Include="images\person_4.jpg" />
+    <Content Include="images\person_5.jpg" />
+    <Content Include="images\person_6.jpg" />
+    <Content Include="images\result_image.png" />
+    <Content Include="images\skill_image.png" />
+    <Content Include="images\svg_1.svg" />
+    <Content Include="images\undraw_bookmarks_r6up.svg" />
+    <Content Include="images\undraw_gift_card_6ekc.svg" />
+    <Content Include="images\undraw_metrics_gtu7.svg" />
+    <Content Include="images\undraw_multitasking_hqg3.svg" />
+    <Content Include="images\upward-arrow.svg" />
+    <Content Include="images\Vector.svg" />
+    <Content Include="images\Vector2.svg" />
     <Content Include="js\aos.js" />
     <Content Include="js\bootstrap-datepicker.min.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -246,6 +276,7 @@
     <Content Include="fonts\icomoon\fonts\icomoon.ttf" />
     <Content Include="fonts\icomoon\fonts\icomoon.woff" />
     <Content Include="fonts\icomoon\selection.json" />
+    <Content Include="images\.DS_Store" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -361,6 +392,7 @@
     <Content Include="scss\_site-base.scss" />
     <Content Include="scss\_site-blocks.scss" />
     <Content Include="scss\_site-navbar.scss" />
+    <Content Include="Views\Home\HowItWork.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

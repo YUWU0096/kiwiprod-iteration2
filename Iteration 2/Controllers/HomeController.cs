@@ -14,5 +14,11 @@ namespace Iteration_2.Controllers
 
             return View();
         }
+        public ActionResult HowItWork()
+        {
+           
+
+            return View();
+        }
     }
 }

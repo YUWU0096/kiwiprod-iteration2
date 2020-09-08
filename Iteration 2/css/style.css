@@ -1,4 +1,52 @@
 /* Base */
+kiwiprod-title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #27A2DB;
+}
+
+title-dots {
+    font-weight: bold;
+    font-size: 70px;
+    color: #27A2DB;
+    line-height: 29px;
+}
+hopme {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 600%;
+    line-height: 158.47%;
+    /* or 174px */
+    letter-spacing: -0.075em;
+    color: #000000;
+    text-shadow: 0px 5px 9px #78ACC5;
+}
+subtitle {
+    width: 492px;
+    height: 189px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #34A0D2;
+}
+additional-info {
+    width: 476px;
+height: 141px;
+left: 134px;
+top: 460px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #34A0D2;
+}
 body {
   line-height: 1.7;
   color: gray;
@@ -79,25 +127,32 @@ h1, h2, h3, h4, h5,
     background: rgba(0, 0, 0, 0.2); }
 
 .btn {
-  font-size: 16px;
-  border-radius: 30px;
-  padding: 10px 30px; }
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 158.47%;
+   
+    border-radius: 30px;
+    padding: 10px 30px;
+}
   .btn:hover, .btn:active, .btn:focus {
     outline: none;
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
-  .btn.btn-primary {
-    border-width: 2px;
-    background: #4285f4;
-    border-color: #4285f4;
-    color: #fff;
-    position: relative;
-    top: 0;
-    -webkit-transition: .3s all ease;
-    -o-transition: .3s all ease;
-    transition: .3s all ease;
-    -webkit-box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
-    box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4); }
+    .btn.btn-primary {
+        border-width: 2px;
+        background: #FFFFFF;
+        border-color: #FFFFFF;
+        color: #27A2DB;
+        position: relative;
+        top: 0;
+        -webkit-transition: .3s all ease;
+        -o-transition: .3s all ease;
+        transition: .3s all ease;
+        -webkit-box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+        box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+    }
     .btn.btn-primary:hover {
       top: -2px;
       background: #4285f4;
@@ -313,13 +368,20 @@ h1, h2, h3, h4, h5,
       display: inline-block; }
     .site-navbar .site-navigation .site-menu > li {
       display: inline-block; }
-      .site-navbar .site-navigation .site-menu > li > a {
-        padding: 15px 20px;
-        color: #000;
-        display: inline-block;
-        text-decoration: none !important; }
-        .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #4285f4; }
+        .site-navbar .site-navigation .site-menu > li > a {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            padding: 15px 20px;
+            color: #27A2DB;
+            display: inline-block;
+            text-decoration: none !important;
+        }
+            .site-navbar .site-navigation .site-menu > li > a:hover {
+                color: black;
+            }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -632,13 +694,17 @@ h1, h2, h3, h4, h5,
 .img-absolute {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 13%;
+  left: 40%;
   top: 60%;
+
   -webkit-transform: translateY(-50%) translateX(30%);
   -ms-transform: translateY(-50%) translateX(30%);
   transform: translateY(-50%) translateX(30%); }
-  .img-absolute img {
-    max-width: 100%; }
+    .img-absolute img {
+        max-width: 100%;
+        max-height: 100%;
+    }
   @media (max-width: 991.98px) {
     .img-absolute {
       position: relative;
@@ -1780,9 +1846,15 @@ h1, h2, h3, h4, h5,
   text-transform: uppercase; }
 
 .section-title {
-  color: #000;
-  font-size: 40px;
-  font-weight: 900; }
+    font-family: Montserrat;
+    font-style: normal;
+   
+    line-height: 44px;
+    /* identical to box height */
+    color: #094A68;
+     font-size: 40px;
+    font-weight: 900;
+}
   @media (max-width: 991.98px) {
     .section-title {
       font-size: 30px; } }
