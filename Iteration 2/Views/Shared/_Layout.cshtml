@@ -54,12 +54,13 @@
 
                     <div class="col-12 col-md-9 col-xl-8 main-menu">
                         <nav class="site-navigation position-relative text-right" role="navigation">
+
                             <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0" >
-                                <li><a href="/Home/Index" class="nav-link">Home</a></li>
-                                <li><a href="/Home/HowItWork" class="nav-link">How it works</a></li>
-                                <li><a href="/Search/Analysis" class="nav-link">Get career advice</a></li>
-                                <li><a href="/Home/news" class="nav-link">News</a></li>
-                                <li><a href="/Home/Aboutus" class="nav-link">About us</a></li>
+                                <li><a href="~/Home/Index" class="nav-link">Home</a></li>
+                                <li><a href="~/Home/HowItWork" class="nav-link">How it works</a></li>
+                                <li><a href="~/Search/Analysis" class="nav-link">Get career advice</a></li>
+                                <li><a href="~/Home/news" class="nav-link">News</a></li>
+                                <li><a href="~/Home/Aboutus" class="nav-link">About us</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -71,17 +72,25 @@
 
 
 
-            <div class="footer py-5 ">
-                @RenderBody()
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - kiwiprod</p>
-                </footer>
-                <hr />
+        <div class="footer py-5 ">
+            @RenderBody()
+            <footer>
+                <p>&copy; @DateTime.Now.Year - kiwiprod</p>
+            </footer>
+            <hr />
             </div>
 
         </div>
 
-    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+ 
+    <script src="~/js/jquery-3.5.1.min.js"></script>
     <script src="~/js/jquery-ui.js"></script>
     <script src="~/js/popper.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
@@ -89,7 +98,6 @@
     <script src="~/js/jquery.countdown.min.js"></script>
     <script src="~/js/bootstrap-datepicker.min.js"></script>
     <script src="~/js/jquery.easing.1.3.js"></script>
-    <!-- direct cdn to code, not used due to inclusion of local library -->
     <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous"></script-->
     <script src="~/js/aos.js"></script>
     <script src="~/js/jquery.fancybox.min.js"></script>
