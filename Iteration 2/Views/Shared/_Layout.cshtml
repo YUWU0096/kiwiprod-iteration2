@@ -30,7 +30,7 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
      <div id="overlayer"></div>
    
-    <div class="site-wrap" id="home-section">
+    
         <div class="site-mobile-menu site-navbar-target">
             <div class="site-mobile-menu-header">
                 <div class="site-mobile-menu-close mt-3">
@@ -55,10 +55,16 @@
                     <div class="col-12 col-md-9 col-xl-8 main-menu">
                         <nav class="site-navigation position-relative text-right" role="navigation">
 
-                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0" >
-                                <li><a href="~/Home/Index" class="nav-link">Home</a></li>
-                                <li><a href="~/Home/HowItWork" class="nav-link">How it works</a></li>
-                                <li><a href="~/Search/Analysis" class="nav-link">Get career advice</a></li>
+                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
+                                <li><a href="~/Home/Index#home-section" class="nav-link">Home</a></li>
+                                <li><a href="~/Home/Index#HowitWork" class="nav-link">How it works</a></li>
+                                <li class="has-children">
+                                    <a href="~/Search/Analysis" class="nav-link">Get career advice</a>
+                                    <ul class="dropdown">
+                                        <li><a href="~/Search/Analysis">AI Career Analysis</a></li>
+                                        <li><a href="~/Search/Articles">Articles</a></li>
+                                     </ul>
+                                </li>
                                 <li><a href="~/Home/news" class="nav-link">News</a></li>
                                 <li><a href="~/Home/Aboutus" class="nav-link">About us</a></li>
                             </ul>
@@ -79,8 +85,6 @@
             </footer>
             <hr />
             </div>
-
-        </div>
 
 
 

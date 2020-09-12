@@ -6,29 +6,20 @@ using System.Web.Mvc;
 
 namespace Iteration_2.Controllers
 {
-    public class HomeController : Controller
+    public class SearchController : Controller
     {
+        // GET: Search
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
             return View();
         }
-        public ActionResult HowItWork()
-        { 
 
-            return View();
-        }
-        public ActionResult News()
+        public ActionResult Analysis()
         {
-
-
             return View();
         }
-        public ActionResult About()
+        public ActionResult Articles()
         {
-
-
             return View();
         }
 

@@ -156,6 +156,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,6 +195,8 @@
     <Content Include="fonts\icomoon\Read Me.txt" />
     <Content Include="fonts\icomoon\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\3 tips on how to rock the interview! Surprise with your awareness Before the interview, you should carefully study the information about the company, look at its official website and other sources.png" />
+    <Content Include="images\5 tips on how to find a job 1. Local experience matters. Therefore, check your visa status and, if you are eligible to work, make sure you make full use of this right to gain local experience. Alt.png" />
     <Content Include="images\about_1.jpg" />
     <Content Include="images\arrow-left-bl.png" />
     <Content Include="images\austin-distel-gUIJ0YszPig-unsplash.png" />
@@ -203,6 +206,7 @@
     <Content Include="images\evangeline-shaw-VLkoOabAxqw-unsplash.png" />
     <Content Include="images\frontpage_infographic.png" />
     <Content Include="images\hero_1.jpg" />
+    <Content Include="images\How NOT to write a resume! 1. Inadequate volume. It looks strange as an overly voluminous _poem_ about the experience of ten pages %28sometimes it happens%29, and an overly short description in two wo.png" />
     <Content Include="images\img_1.jpg" />
     <Content Include="images\img_2.jpg" />
     <Content Include="images\img_3.jpg" />
@@ -394,6 +398,10 @@
     <Content Include="scss\_site-blocks.scss" />
     <Content Include="scss\_site-navbar.scss" />
     <Content Include="Views\Home\HowItWork.cshtml" />
+    <Content Include="Views\Search\Analysis.cshtml" />
+    <Content Include="Views\Search\Articles.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
