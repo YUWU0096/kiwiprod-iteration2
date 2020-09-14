@@ -1,26 +1,26 @@
-id,degree
-0,Postgraduate Degree Level
-1,Doctoral Degree Level
-2,Master Degree Level
-3,Graduate Diploma and Graduate Certificate Level
-4,Graduate Diploma Level
-5,Graduate Certificate Level
-6,Bachelor Degree Level
-7,Advanced Diploma and Diploma Level
-8,Advanced Diploma and Associate Degree Level
-9,Diploma Level
-10,Certificate III & IV Level
-11,Certificate IV
-12,Certificate III
-13,Years 10 and above
-14,Year 12
-15,Year 11
-16,Year 10
-17,Certificate I & II Level Advanced Diploma and Diploma Level
-18,Certificate I & II Level
-19,Certificate II
-20,Certificate I
-21,Year 9
-22,Year 8 or below
-23,Did not go to school
-24,Unknown education background
+id,degree,value
+0,Postgraduate Degree Level,24
+1,Doctoral Degree Level,23
+2,Master Degree Level,22
+3,Graduate Diploma and Graduate Certificate Level,21
+4,Graduate Diploma Level,20
+5,Graduate Certificate Level,19
+6,Bachelor Degree Level,18
+7,Advanced Diploma and Diploma Level,17
+8,Advanced Diploma and Associate Degree Level,16
+9,Diploma Level,15
+10,Certificate III & IV Level,14
+11,Certificate IV,13
+12,Certificate III,12
+13,Years 10 and above,11
+14,Year 12,10
+15,Year 11,9
+16,Year 10,8
+17,Certificate I & II Level Advanced Diploma and Diploma Level,7
+18,Certificate I & II Level,6
+19,Certificate II,5
+20,Certificate I,4
+21,Year 9,3
+22,Year 8 or below,2
+23,Did not go to school,1
+24,Unknown education background,0
