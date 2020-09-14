@@ -42,3 +42,10 @@ def get_employment_status(emp_df):
         lambda x: int(not ((x.LFSP is np.nan or x.LFSP in ["4", "5", "6", "X"])
                            and (x.INDP is np.nan or x.INDP == 'XXXX'))), axis=1
     )
+
+
+# Function for return top N predictions
+def topn_predictions(ml, df, n=5):
+    predictions = ml.predict_proba(df)
+    return [ml.classes_[x] for x in np.argsort(predictions, axis=1)[:, :5]]
+

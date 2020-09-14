@@ -62,8 +62,6 @@ heap_index_values = {
     "Did not go to school": 1,
     "Unknown education background": 0
 }
-# export index to value as database
-pd.DataFrame(heap_index_values.keys(), columns=['degree']).to_csv("highest_education_index.csv", index=True, index_label='id')
 
 # highest school year compeleted
 # used to replace na values in heap
