@@ -45,10 +45,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -161,9 +168,40 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AgeGroup.cs">
+      <DependentUpon>SearchModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\English_Profeciency.cs">
+      <DependentUpon>SearchModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gender.cs">
+      <DependentUpon>SearchModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Highest_education.cs">
+      <DependentUpon>SearchModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SearchModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SearchModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SearchModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\AnalysisDB.mdf" />
+    <Content Include="App_Data\AnalysisDB_log.ldf">
+      <DependentUpon>AnalysisDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -212,6 +250,7 @@
     <Content Include="images\img_3.jpg" />
     <Content Include="images\kiwiprod.svg" />
     <Content Include="images\landing_1.png" />
+    <Content Include="images\logo.png" />
     <Content Include="images\ml_image.png" />
     <Content Include="images\person_1.jpg" />
     <Content Include="images\person_2.jpg" />
@@ -247,6 +286,16 @@
     <Content Include="js\popper.min.js" />
     <Content Include="js\slick.min.js" />
     <Content Include="js\typed.js" />
+    <Content Include="Models\SearchModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SearchModel.edmx</DependentUpon>
+      <LastGenOutput>SearchModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SearchModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SearchModel.edmx</DependentUpon>
+      <LastGenOutput>SearchModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -282,6 +331,13 @@
     <Content Include="fonts\icomoon\fonts\icomoon.woff" />
     <Content Include="fonts\icomoon\selection.json" />
     <Content Include="images\.DS_Store" />
+    <EntityDeploy Include="Models\SearchModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SearchModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SearchModel.edmx.diagram">
+      <DependentUpon>SearchModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -402,10 +458,10 @@
     <Content Include="Views\Search\Articles.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Search\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

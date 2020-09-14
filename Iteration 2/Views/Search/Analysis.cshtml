@@ -1,8 +1,91 @@
-﻿
+﻿@using Iteration_2.Models
+@model AnalysisDBEntities
 @{
     ViewBag.Title = "Analysis";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Analysis</h2>
+<body>
+    <div class="container col-12 col-sm-6 col-md-8" style="margin-top:8%; margin-bottom: 1%">
+        <div class="col-lg">
+            <choose>Choose your education level:</choose>
+        </div>
+    </div>
 
+
+        @using (Html.BeginForm("Result", "Search", FormMethod.Post))
+        {
+            <form action="/action_page.php">
+                <div class="container col-12 col-sm-6 col-md-8" style="width:100%">
+
+
+
+                    <div class="col-sm-3 col-12 col-sm-6 col-md-8">
+
+                        <Education>Gender</Education><br>
+                        @Html.DropDownList("Gender", ViewBag.gender as SelectList, "-- Select Gender Group --", new { style = "width: 50%;margin-top:4%" })
+                    </div>
+                    @*<div class="col-sm-3 col-12 col-sm-6 col-md-8">
+
+                        <Education>Age Group</Education><br>
+                        @Html.DropDownList("age", ViewBag.age as SelectList, "-- Select Age Group --", new { style = "width: 50%;margin-top:4%" })
+                    </div>*@
+
+                    <div class="col-sm-3 col-12 col-sm-6 col-md-8">
+
+                        <Education>Education</Education><br>
+                        @Html.DropDownList("education", ViewBag.education as SelectList, "-- Select Education Level --", new { style = "width: 50%;margin-top:4%" })
+                    </div>
+
+                    @*<div class="col-sm-3 col-12 col-sm-6 col-md-8">
+
+                        <Education>English Profeciency</Education><br>
+                        @Html.DropDownList("English_Profeciency", ViewBag.English_Profeciency as SelectList, "-- Select English_Profeciency --", new { style = "width: 50%;margin-top:4%" })
+                    </div>*@
+
+
+                    <div class="col-sm-4 col-12 col-sm-6 col-md-8">
+                        <!-- page transition should be handled by MVC managers -->
+                        <div class="col-4" style="text-align:center">
+                            @*<input id="Submit1" type="submit" value="search" />*@
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                @*<div class="row justify-content-center">
+                    <button style="background: #FFFFFF;
+                border: 1px solid #FFFFFF;
+                box-sizing: border-box;
+                border-radius: 100px;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 158.47%;
+                color: #27A2DB;
+                margin-top:20px;
+                border: 2px solid #27A2DB">
+                        Get Results
+                        <img src="~/src/img/Vector.svg" />
+                    </button>
+                </div>*@
+
+
+            </form>
+            @*<a class="col-4" href="../Home/Home" style="text-align:left;position:absolute;bottom:0%">
+                <img src="~/src/img/Vector2.svg">
+            </a>*@
+        }
+        <script src="./js/jquery-3.5.1.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.js-example-basic-multiple').select2();
+            });
+        </script>
+
+</body>

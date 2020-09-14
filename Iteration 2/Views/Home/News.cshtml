@@ -4,5 +4,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>News</h2>
-
+<html>
+<body>
+    <div class="container-fluid" style="height: 100%; width:100%">
+        <div class="row justify-content-center" style="text-align: left; max-width: 50vw">
+            <p style="color: #34A0D2; font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 170%">Latest job news tailored to your interests</p>
+        </div>
+     
+        <div class="row" style="max-width: 100%; margin-top: calc(20vh - 100px)">
+            <div class="card-body">
+                <rssapp-carousel id="WoHoui55S5Dloeze"></rssapp-carousel>
+                <script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

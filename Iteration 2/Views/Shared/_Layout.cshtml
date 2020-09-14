@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Hopme &mdash;Iteration2 by Kiwiprod</title>
-   
+    <link href="~/images/logo.png" rel="shortcut icon" type="image/x-icon" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -93,7 +93,11 @@
 
 
 
- 
+        <script>
+            $(document).ready(function () {
+                $('html, body').animate({ scrollTop: $(window).height() / 1.5 }, 'slow');
+            });
+        </script>
     <script src="~/js/jquery-3.5.1.min.js"></script>
     <script src="~/js/jquery-ui.js"></script>
     <script src="~/js/popper.min.js"></script>
