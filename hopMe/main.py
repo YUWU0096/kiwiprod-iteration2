@@ -123,7 +123,7 @@ if __name__ == '__main__':
     au_inputs = pd.DataFrame(list(itertools.product(*[au_micro.gender.unique(),
                                                       au_micro.age_group_10y.unique(),
                                                       au_micro.english_proficiency.unique(),
-                                                      au_micro.highest_education.unique()])),
+                                                      range(0,26)])),
                              columns=["gender", "age_group_10y", "english_proficiency", "highest_education"])
     # assign outputs to inputs
     # the variables are gender, age_group_10y, english_proficiency, highest_education
