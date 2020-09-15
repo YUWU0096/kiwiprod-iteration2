@@ -35,18 +35,36 @@ choose {
     /* identical to box height */
     color: #34A0D2;
 }
-Education {
-    /* Education level */
-  
-
+ResultTitle {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 158.47%;
-    /* identical to box height, or 29px */
-    color: #34A0D2;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    font-size: 34px;
+    line-height: 41px;
+    /* identical to box height */
+    color: #27A2DB;
+}
+resultitle {
+    margin-top:5%;
+    margin-left: 5%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+    color: rgba(92, 90, 90, 0.91);
+}
+resultpredict {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        padding-left: 5%;
+        padding-top: 15%;
+        color: #000000;
+
+
 }
 rectangle {
     position: absolute;

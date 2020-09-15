@@ -1,9 +1,4 @@
-﻿CREATE TABLE Highest_education(
-   id     INTEGER  NOT NULL PRIMARY KEY 
-  ,degree VARCHAR(24) NOT NULL
-  ,value  INTEGER  NOT NULL
-);
-INSERT INTO Highest_education(id,degree,value) VALUES (0,'Postgraduate Degree Level',24);
+﻿INSERT INTO Highest_education(id,degree,value) VALUES (0,'Postgraduate Degree Level',24);
 INSERT INTO Highest_education(id,degree,value) VALUES (1,'Doctoral Degree Level',23);
 INSERT INTO Highest_education(id,degree,value) VALUES (2,'Master Degree Level',22);
 INSERT INTO Highest_education(id,degree,value) VALUES (3,'Graduate Diploma and Graduate Certificate Level',21);

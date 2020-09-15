@@ -237,6 +237,7 @@
     <Content Include="fonts\icomoon\style.css" />
     <Content Include="Global.asax" />
     <Content Include="images\3 tips on how to rock the interview! Surprise with your awareness Before the interview, you should carefully study the information about the company, look at its official website and other sources.png" />
+    <Content Include="images\3304458 1.png" />
     <Content Include="images\5 tips on how to find a job 1. Local experience matters. Therefore, check your visa status and, if you are eligible to work, make sure you make full use of this right to gain local experience. Alt.png" />
     <Content Include="images\about_1.jpg" />
     <Content Include="images\arrow-left-bl.png" />
@@ -244,6 +245,7 @@
     <Content Include="images\do-ui-kit-1-6-overview.jpg" />
     <Content Include="images\do_ui_kit_download_cta_floating_devices-2x.png" />
     <Content Include="images\do_ui_kit_hero_floating_devices-2x.png" />
+    <Content Include="images\email.svg" />
     <Content Include="images\evangeline-shaw-VLkoOabAxqw-unsplash.png" />
     <Content Include="images\frontpage_infographic.png" />
     <Content Include="images\hero_1.jpg" />
@@ -462,6 +464,7 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Search\Result.cshtml" />
+    <Content Include="Views\Search\quizz.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
