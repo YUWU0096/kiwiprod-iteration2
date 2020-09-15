@@ -1,11 +1,11 @@
 ﻿@using Iteration_2.Models
-@model AnalysisDBEntities
+@model AnalysisDBEntities1
 @{
     ViewBag.Title = "Analysis";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<body>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
     <div class="container col-12 col-sm-6 col-md-8" style="margin-top:8%; margin-bottom: 1%">
         <div class="col-lg">
             <choose>Choose your education level:</choose>
@@ -16,46 +16,42 @@
         @using (Html.BeginForm("Result", "Search", FormMethod.Post))
         {
             <form action="/action_page.php">
-                <div class="container col-12 col-sm-6 col-md-8" style="width:100%">
+            <div class="container col-12 col-sm-6 col-md-8" style="width:100%">
 
 
 
-                    <div class="col-sm-3 col-12 col-sm-6 col-md-8">
+                <div class="col-sm-6 col-12 col-sm-6 col-md-8">
 
-                        <Education>Gender</Education><br>
-                        @Html.DropDownList("Gender", ViewBag.gender as SelectList, "-- Select Gender Group --", new { style = "width: 50%;margin-top:4%" })
-                    </div>
-                    @*<div class="col-sm-3 col-12 col-sm-6 col-md-8">
+                    <Education>Gender</Education><br>
+                  
+                    @Html.DropDownList("Gender", ViewBag.gender as SelectList, "-- Select Gender Group --", new { @class = "btn btn-secondary dropdown-toggle" })
+                </div>
+                <div class="col-sm-6 col-12 col-sm-6 col-md-8">
 
-                        <Education>Age Group</Education><br>
-                        @Html.DropDownList("age", ViewBag.age as SelectList, "-- Select Age Group --", new { style = "width: 50%;margin-top:4%" })
-                    </div>*@
-
-                    <div class="col-sm-3 col-12 col-sm-6 col-md-8">
-
-                        <Education>Education</Education><br>
-                        @Html.DropDownList("education", ViewBag.education as SelectList, "-- Select Education Level --", new { style = "width: 50%;margin-top:4%" })
-                    </div>
-
-                    @*<div class="col-sm-3 col-12 col-sm-6 col-md-8">
-
-                        <Education>English Profeciency</Education><br>
-                        @Html.DropDownList("English_Profeciency", ViewBag.English_Profeciency as SelectList, "-- Select English_Profeciency --", new { style = "width: 50%;margin-top:4%" })
-                    </div>*@
-
-
-                    <div class="col-sm-4 col-12 col-sm-6 col-md-8">
-                        <!-- page transition should be handled by MVC managers -->
-                        <div class="col-4" style="text-align:center">
-                            @*<input id="Submit1" type="submit" value="search" />*@
-
-                        </div>
-
-                    </div>
-
+                    <Education>Age Group</Education><br>
+                    @Html.DropDownList("age", ViewBag.age as SelectList, "-- Select Age Group --", new { @class="btn btn-secondary dropdown-toggle" })
                 </div>
 
-                @*<div class="row justify-content-center">
+                <div class="col-sm-6 col-12 col-sm-6 col-md-8">
+
+                    <Education>Education</Education><br>
+                    @Html.DropDownList("education", ViewBag.education as SelectList, "-- Select Education Level --", new { @class = "btn btn-secondary dropdown-toggle" })
+                </div>
+
+                <div class="col-sm-6 col-12 col-sm-6 col-md-8">
+
+                    <Education>English Profeciency</Education><br>
+                    @Html.DropDownList("English_Profeciency", ViewBag.English_Profeciency as SelectList, "-- Select English_Profeciency --", new { @class = "btn btn-secondary dropdown-toggle" })
+                </div>
+
+        
+
+            </div>
+            <div class="row justify-content-center">
+                <button class="btn btn-primary mr-2 mb-2">Start analysis  ➔</button>
+            </div>
+
+            @*<div class="row justify-content-center">
                     <button style="background: #FFFFFF;
                 border: 1px solid #FFFFFF;
                 box-sizing: border-box;
@@ -74,7 +70,7 @@
                 </div>*@
 
 
-            </form>
+        </form>
             @*<a class="col-4" href="../Home/Home" style="text-align:left;position:absolute;bottom:0%">
                 <img src="~/src/img/Vector2.svg">
             </a>*@

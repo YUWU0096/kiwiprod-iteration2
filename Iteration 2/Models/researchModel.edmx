@@ -17,7 +17,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="english_profeciency" Type="varchar" MaxLength="59" Nullable="false" />
+          <Property Name="degree" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -31,13 +32,30 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="degree" Type="varchar" MaxLength="59" Nullable="false" />
+          <Property Name="degree" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prediction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="gender" Type="int" Nullable="false" />
+          <Property Name="age_group_10y" Type="int" Nullable="false" />
+          <Property Name="english_proficiency" Type="int" Nullable="false" />
+          <Property Name="highest_education" Type="int" Nullable="false" />
+          <Property Name="pred_1" Type="varchar" MaxLength="56" Nullable="false" />
+          <Property Name="pred_2" Type="varchar" MaxLength="56" Nullable="false" />
+          <Property Name="pred_3" Type="varchar" MaxLength="56" Nullable="false" />
+          <Property Name="pred_4" Type="varchar" MaxLength="56" Nullable="false" />
+          <Property Name="pred_5" Type="varchar" MaxLength="56" Nullable="false" />
         </EntityType>
         <EntityContainer Name="AnalysisDBModelStoreContainer">
           <EntitySet Name="AgeGroup" EntityType="Self.AgeGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="English_Profeciency" EntityType="Self.English_Profeciency" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Highest_education" EntityType="Self.Highest_education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prediction" EntityType="Self.Prediction" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -56,7 +74,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="english_profeciency1" Type="String" MaxLength="59" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="degree" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -70,20 +89,37 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="degree" Type="String" MaxLength="59" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="degree" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="AnalysisDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityType Name="Prediction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="gender" Type="Int32" Nullable="false" />
+          <Property Name="age_group_10y" Type="Int32" Nullable="false" />
+          <Property Name="english_proficiency" Type="Int32" Nullable="false" />
+          <Property Name="highest_education" Type="Int32" Nullable="false" />
+          <Property Name="pred_1" Type="String" MaxLength="56" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pred_2" Type="String" MaxLength="56" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pred_3" Type="String" MaxLength="56" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pred_4" Type="String" MaxLength="56" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pred_5" Type="String" MaxLength="56" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AnalysisDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AgeGroup" EntityType="Self.AgeGroup" />
           <EntitySet Name="English_Profeciency" EntityType="Self.English_Profeciency" />
           <EntitySet Name="Gender" EntityType="Self.Gender" />
           <EntitySet Name="Highest_education" EntityType="Self.Highest_education" />
+          <EntitySet Name="Prediction" EntityType="Self.Prediction" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AnalysisDBModelStoreContainer" CdmEntityContainer="AnalysisDBEntities">
+        <EntityContainerMapping StorageEntityContainer="AnalysisDBModelStoreContainer" CdmEntityContainer="AnalysisDBEntities1">
           <EntitySetMapping Name="AgeGroup">
             <EntityTypeMapping TypeName="AnalysisDBModel.AgeGroup">
               <MappingFragment StoreEntitySet="AgeGroup">
@@ -96,7 +132,8 @@
             <EntityTypeMapping TypeName="AnalysisDBModel.English_Profeciency">
               <MappingFragment StoreEntitySet="English_Profeciency">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="english_profeciency1" ColumnName="english_profeciency" />
+                <ScalarProperty Name="degree" ColumnName="degree" />
+                <ScalarProperty Name="value" ColumnName="value" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -113,6 +150,23 @@
               <MappingFragment StoreEntitySet="Highest_education">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="degree" ColumnName="degree" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prediction">
+            <EntityTypeMapping TypeName="AnalysisDBModel.Prediction">
+              <MappingFragment StoreEntitySet="Prediction">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="age_group_10y" ColumnName="age_group_10y" />
+                <ScalarProperty Name="english_proficiency" ColumnName="english_proficiency" />
+                <ScalarProperty Name="highest_education" ColumnName="highest_education" />
+                <ScalarProperty Name="pred_1" ColumnName="pred_1" />
+                <ScalarProperty Name="pred_2" ColumnName="pred_2" />
+                <ScalarProperty Name="pred_3" ColumnName="pred_3" />
+                <ScalarProperty Name="pred_4" ColumnName="pred_4" />
+                <ScalarProperty Name="pred_5" ColumnName="pred_5" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

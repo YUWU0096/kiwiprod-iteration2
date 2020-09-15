@@ -6,16 +6,17 @@ namespace Iteration_2.Controllers
     public class SearchController : Controller
     {
         // GET: Search
-        AnalysisDBEntities ds = new AnalysisDBEntities();
+        AnalysisDBEntities1 ds = new AnalysisDBEntities1();
       
         public ActionResult Analysis()
         {
-            ViewBag.age = new SelectList(ds.AgeGroup, "Id", "ageGroup");
-            ViewBag.gender = new SelectList(ds.Gender, "Id", "Gender");
-            ViewBag.English_Profeciency = new SelectList(ds.English_Profeciency, "Id", "english_Profeciency");
-            ViewBag.education = new SelectList(ds.Highest_education, "Id", "degree");
+            ViewBag.age = new SelectList(ds.AgeGroup, "Id", "ageGroup1");
+            ViewBag.gender = new SelectList(ds.Gender, "Id", "Gender1");
+            ViewBag.English_Profeciency = new SelectList(ds.English_Profeciency, "Id", "degree", "value");
+            ViewBag.education = new SelectList(ds.Highest_education, "Id", "degree", "value");
             return View();
         }
+
 
 
         public ActionResult Articles()
@@ -23,6 +24,15 @@ namespace Iteration_2.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Result(FormCollection Fc)
+
+        {
+           int test = 122333;
+            ViewBag.result = test;
+
+            return View();
+        }
 
     }
 }

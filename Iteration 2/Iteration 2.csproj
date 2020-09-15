@@ -169,31 +169,34 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AgeGroup.cs">
-      <DependentUpon>SearchModel.tt</DependentUpon>
+      <DependentUpon>researchModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\English_Profeciency.cs">
-      <DependentUpon>SearchModel.tt</DependentUpon>
+      <DependentUpon>researchModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Gender.cs">
-      <DependentUpon>SearchModel.tt</DependentUpon>
+      <DependentUpon>researchModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Highest_education.cs">
-      <DependentUpon>SearchModel.tt</DependentUpon>
+      <DependentUpon>researchModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SearchModel.Context.cs">
+    <Compile Include="Models\Prediction.cs">
+      <DependentUpon>researchModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\researchModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SearchModel.Context.tt</DependentUpon>
+      <DependentUpon>researchModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SearchModel.cs">
+    <Compile Include="Models\researchModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SearchModel.tt</DependentUpon>
+      <DependentUpon>researchModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SearchModel.Designer.cs">
+    <Compile Include="Models\researchModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SearchModel.edmx</DependentUpon>
+      <DependentUpon>researchModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -286,15 +289,15 @@
     <Content Include="js\popper.min.js" />
     <Content Include="js\slick.min.js" />
     <Content Include="js\typed.js" />
-    <Content Include="Models\SearchModel.Context.tt">
+    <Content Include="Models\researchModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SearchModel.edmx</DependentUpon>
-      <LastGenOutput>SearchModel.Context.cs</LastGenOutput>
+      <DependentUpon>researchModel.edmx</DependentUpon>
+      <LastGenOutput>researchModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\SearchModel.tt">
+    <Content Include="Models\researchModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SearchModel.edmx</DependentUpon>
-      <LastGenOutput>SearchModel.cs</LastGenOutput>
+      <DependentUpon>researchModel.edmx</DependentUpon>
+      <LastGenOutput>researchModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -331,12 +334,12 @@
     <Content Include="fonts\icomoon\fonts\icomoon.woff" />
     <Content Include="fonts\icomoon\selection.json" />
     <Content Include="images\.DS_Store" />
-    <EntityDeploy Include="Models\SearchModel.edmx">
+    <EntityDeploy Include="Models\researchModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SearchModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>researchModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\SearchModel.edmx.diagram">
-      <DependentUpon>SearchModel.edmx</DependentUpon>
+    <Content Include="Models\researchModel.edmx.diagram">
+      <DependentUpon>researchModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

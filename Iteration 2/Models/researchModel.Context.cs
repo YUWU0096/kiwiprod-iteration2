@@ -13,10 +13,10 @@ namespace Iteration_2.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AnalysisDBEntities : DbContext
+    public partial class AnalysisDBEntities1 : DbContext
     {
-        public AnalysisDBEntities()
-            : base("name=AnalysisDBEntities")
+        public AnalysisDBEntities1()
+            : base("name=AnalysisDBEntities1")
         {
         }
     
@@ -29,5 +29,6 @@ namespace Iteration_2.Models
         public virtual DbSet<English_Profeciency> English_Profeciency { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Highest_education> Highest_education { get; set; }
+        public virtual DbSet<Prediction> Prediction { get; set; }
     }
 }

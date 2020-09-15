@@ -37,9 +37,8 @@ choose {
 }
 Education {
     /* Education level */
-    position: absolute;
-    width: 143px;
-    height: 29px;
+  
+
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
@@ -48,6 +47,30 @@ Education {
     /* identical to box height, or 29px */
     color: #34A0D2;
     text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+}
+rectangle {
+    position: absolute;
+    width: 708px;
+    height: 1135px;
+    left: 257px;
+    top: 171px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 65px;
+}
+articleTitle {
+   
+    width: 759px;
+    height: 41px;
+    left: 281px;
+    top: 225px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 43px;
+    text-align: justify;
+    color: #64C3EF;
 }
 body {
   line-height: 1.7;

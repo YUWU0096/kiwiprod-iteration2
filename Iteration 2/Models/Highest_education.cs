@@ -16,5 +16,6 @@ namespace Iteration_2.Models
     {
         public int id { get; set; }
         public string degree { get; set; }
+        public int value { get; set; }
     }
 }

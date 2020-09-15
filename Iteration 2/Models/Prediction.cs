@@ -12,10 +12,17 @@ namespace Iteration_2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class English_Profeciency
+    public partial class Prediction
     {
         public int id { get; set; }
-        public string degree { get; set; }
-        public int value { get; set; }
+        public int gender { get; set; }
+        public int age_group_10y { get; set; }
+        public int english_proficiency { get; set; }
+        public int highest_education { get; set; }
+        public string pred_1 { get; set; }
+        public string pred_2 { get; set; }
+        public string pred_3 { get; set; }
+        public string pred_4 { get; set; }
+        public string pred_5 { get; set; }
     }
 }
