@@ -56,7 +56,7 @@ namespace Iteration_2.Controllers
 
             int educationID;
             int highest_education;
-            if (int.TryParse(Fc["education"], out educationID))
+            if (int.TryParse(Fc["education"], out highest_education))
             {
                 educationID = int.Parse(Fc["education"]);
                 foreach (var x in ds.Highest_education)
@@ -74,7 +74,7 @@ namespace Iteration_2.Controllers
             }
 
             int englishID;
-            if (int.TryParse(Fc["English_Profeciency"], out ageID))
+            if (int.TryParse(Fc["English_Profeciency"], out englishID))
             {
                 englishID = int.Parse(Fc["English_Profeciency"]);
               
@@ -86,7 +86,7 @@ namespace Iteration_2.Controllers
 
             foreach (var y in ds.Prediction)
             {
-                if (y.gender == genderID && y.age_group_10y==ageID && y.english_proficiency==englishID && y.highest_education==educationID )
+                if (y.gender == genderID && y.age_group_10y == ageID && y.english_proficiency == englishID && y.highest_education == highest_education)
                 {
                     ViewBag.pred1 = y.pred_1;
                     ViewBag.pred2 = y.pred_2;
@@ -94,8 +94,9 @@ namespace Iteration_2.Controllers
                     ViewBag.pred4 = y.pred_4;
                     ViewBag.pred5 = y.pred_5;
                 }
+               
             }
-
+        
             return View();
         }
 
