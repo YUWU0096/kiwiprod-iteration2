@@ -52,6 +52,12 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SendGrid, Version=9.21.0.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.9.21.0\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\starkbank-ecdsa.1.2.0\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -263,6 +269,11 @@
     <Content Include="images\person_4.jpg" />
     <Content Include="images\person_5.jpg" />
     <Content Include="images\person_6.jpg" />
+    <Content Include="images\quizz1.jpg" />
+    <Content Include="images\quizz2.jpg" />
+    <Content Include="images\quizz3.jpg" />
+    <Content Include="images\quizz4.jpg" />
+    <Content Include="images\quizz5.jpg" />
     <Content Include="images\result_image.png" />
     <Content Include="images\skill_image.png" />
     <Content Include="images\svg_1.svg" />
@@ -465,6 +476,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Search\Result.cshtml" />
     <Content Include="Views\Search\quizz.cshtml" />
+    <Content Include="Views\Search\Email.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

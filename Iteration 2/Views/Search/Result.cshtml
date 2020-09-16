@@ -3,13 +3,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-   
+    <div class="site-section">
+
         <div class="container">
-           
+
             <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
 
                 <div class="col-1"></div>
-                <ResultTitle> Areas you will most likely be employed in:</ResultTitle> 
+                <ResultTitle> Areas you will most likely be employed in:</ResultTitle>
                 <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 col-xs-10 mr-auto">
                     <div class="container" id="pred1">
                         <br />
@@ -41,13 +42,13 @@
 
                 </div>
                 <div class="col-xl-5 col-lg-5  align-content-start">
-                     <img class="img-fluid pt-6" src="~/images/3304458 1.png" alt="Image" />
+                    <img class="img-fluid pt-6" src="~/images/3304458 1.png" alt="Image" />
                     <div style="margin-top:20px">
                         <a href="#" class="btn btn-primary mr-2 mb-4">Download in pdf  ➔</a>
                     </div>
                     <div style="margin-top:20px">
-                       
-                        <a href="#" class="btn btn-primary mr-2 mb-4">Send via email   <img src="~/images/email.svg" type="image/x-icon"/></a>
+
+                        <a href="~/Search/Email" class="btn btn-primary mr-2 mb-4">Send via email   <img src="~/images/email.svg" type="image/x-icon" /></a>
                     </div>
                 </div>
                 <div class="col-1"></div>
@@ -55,9 +56,13 @@
 
 
             </div>
-                
-            </div>
-    
+
+        </div>
+
+
+    </div>
+       
+
 </body>
 
 <style>

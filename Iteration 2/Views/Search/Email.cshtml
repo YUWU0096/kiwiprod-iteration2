@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Email";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <div class="site-section">
+
+        <input type="text" id="email" />
+        <button id="email" type="button" class="btn btn-primary flip" style="margin-left: 0px; margin-top: 0px;width:200px;">
+            <i class="fa fa-cog fa-spin"></i> Send Email
+        </button>
+
+       
+  <script>
+    $("#email").click(function (e) {
+        debugger;
+        e.preventDefault();
+       var saveUrl = '@Url.Action("CallEmail", "Chart")';
+       var prediction1 = @ViewBag.pred1;
+       var prediction2 = @ViewBag.pred2;
+       var prediction3 = @ViewBag.pred3;
+       var prediction4 = @ViewBag.pred4;
+        var prediction5 = @ViewBag.pred5;
+
+
+        var email = $("#email").val();
+        $.ajax({
+        url: saveUrl,
+            data: {
+                'prediction1': prediction1, 'prediction2': prediction2, 'prediction3': prediction3, 'prediction4': prediction4,
+            'prediction5':prediction5,'email':email},
+        method: "POST",
+        error: function () {
+        alert("Ajax call failed");
+        }
+        }).done(function () {
+
+        //if (data.BookingStatus == "OverBooked") {
+        //alert("Oops! The restaurant has been overbooked. Please select some other date or time.");
+        //}
+        //else if (data.BookingStatus == "Already Booked")
+        //{ alert("You have already made a booking at this restaurant for the given time.");}
+        //else { alert("Booking done successfully! An email confirming your reservation has been sent to your email id."); }
+
+
+        })
+
+
+        });
+
+        </script>
+
+
+
+    </div>
+
+
+
+</body>
+
