@@ -2,56 +2,148 @@
    
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <style>
+        #pred1 {
+            margin-left: 0%;
+            width: 100%;
+            height: auto;
+            /* left: 239px;*/
+            top: 310px;
+            background: #FFE49E;
+            box-shadow: 0px 4px 4px rgba(167, 111, 13, 0.52);
+            border-radius: 60px;
+        }
+
+        #pred2 {
+            margin-left: 0%;
+            width: 80%;
+            height: auto;
+            left: 240px;
+            top: 478px;
+            background: #CDB4FF;
+            box-shadow: 0px 4px 4px rgba(80, 6, 106, 0.25);
+            border-radius: 60px;
+        }
+
+        #pred3 {
+            margin-left: 0%;
+            width: 70%;
+            height: auto;
+            left: 239px;
+            top: 636px;
+            background: #9FE2FF;
+            box-shadow: 0px 4px 4px #54C4F8;
+            border-radius: 60px;
+        }
+
+        #pred4 {
+            margin-left: 0%;
+            width: 60%;
+            height: auto;
+            left: 239px;
+            top: 801px;
+            background: #E1FFBB;
+            box-shadow: 0px 4px 4px rgba(20, 146, 25, 0.25);
+            border-radius: 60px;
+        }
+
+        #pred5 {
+            margin-left: 0%;
+            width: 50%;
+            height: auto;
+            left: 239px;
+            top: 940px;
+            background: #FFC8C8;
+            box-shadow: 0px 4px 4px rgba(187, 22, 0, 0.25);
+            border-radius: 60px;
+        }
+    </style>
+
+
+</head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
     <div class="site-section">
 
         <div class="container">
 
             <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
+              
 
-                <div class="col-1"></div>
-                <ResultTitle> Areas you will most likely be employed in:</ResultTitle>
-                <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 col-xs-10 mr-auto">
-                    <div class="container" id="pred1">
-                        <br />
-                        <resultitle>Prediction 1</resultitle><br /><br />
-                        <resultpredict>@ViewBag.pred1  </resultpredict>
-                    </div><br />
-                    <div class="container" id="pred2">
-                        <br />
-                        <resultitle>Prediction 2</resultitle><br /><br />
-                        <resultpredict> @ViewBag.pred2 <br /> </resultpredict>
-                    </div><br />
+                    <div class="col-1"></div>
+                    <ResultTitle> Areas you will most likely be employed in:</ResultTitle><br /><br />
+                    <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 col-xs-10 mr-auto">
+                        <div class="container" id="pred1">
+                            <br />
+                            <resultitle>Prediction 1</resultitle><br />
+                            <resultpredict>@ViewBag.pred1  </resultpredict><br />
+                        </div><br />
+                        <div class="container" id="pred2">
+                            <br />
+                            <resultitle>Prediction 2</resultitle><br />
+                            <resultpredict> @ViewBag.pred2 <br /> </resultpredict><br />
+                        </div><br />
 
-                    <div class="container" id="pred3">
-                        <br />
-                        <resultitle>Prediction 3</resultitle><br /><br />
-                        <resultpredict>  @ViewBag.pred3 <br /> </resultpredict>
-                    </div><br />
+                        <div class="container" id="pred3">
+                            <br />
+                            <resultitle>Prediction 3</resultitle><br />
+                            <resultpredict>  @ViewBag.pred3 <br /> </resultpredict><br />
+                        </div><br />
 
-                    <div class="container" id="pred4">
-                        <br />
-                        <resultitle>Prediction 4</resultitle><br />
-                        <resultpredict>  @ViewBag.pred4 <br /> </resultpredict>
-                    </div><br />
-                    <div class="container" id="pred5">
-                        <br />
-                        <resultitle>Prediction 5</resultitle><br />
-                        <resultpredict>  @ViewBag.pred5 <br /> </resultpredict>
+                        <div class="container" id="pred4">
+                            <br />
+                            <resultitle>Prediction 4</resultitle><br />
+                            <resultpredict>  @ViewBag.pred4 <br /> </resultpredict><br />
+                        </div><br />
+                        <div class="container" id="pred5">
+                            <br />
+                            <resultitle>Prediction 5</resultitle><br />
+                            <resultpredict>  @ViewBag.pred5 <br /> </resultpredict><br />
+                        </div>
+
                     </div>
 
-                </div>
-                <div class="col-xl-5 col-lg-5  align-content-start">
-                    <img class="img-fluid pt-6" src="~/images/3304458 1.png" alt="Image" />
-                    <div style="margin-top:20px">
-                        <a href="#" class="btn btn-primary mr-2 mb-4">Download in pdf  ➔</a>
-                    </div>
-                    <div style="margin-top:20px">
+                    <div class="col-xl-5 col-lg-5  align-content-start">
+                        <img class="img-fluid pt-6" src="~/images/3304458 1.png" alt="Image" />
+                        @*<div style="margin-top:20px">
+                @{Html.BeginForm("SubmitAction", "Search", FormMethod.Post);
+                    {
 
-                        <a href="~/Search/Email" class="btn btn-primary mr-2 mb-4">Send via email   <img src="~/images/email.svg" type="image/x-icon" /></a>
+
+                            <button name="SubmitAction" type="submit" class="btn btn-primary mr-2 mb-4">Download in pdf  ➔</button>
+
+                    }
+
+                }
+                <a href="#" class="btn btn-primary mr-2 mb-4">Download in pdf  ➔</a>
+            </div>*@
+
+
+                        <div style="margin-top:20px">
+
+                            <button id="emailbut" type="button" class="btn btn-primary mr-2 mb-4 flip">
+                                Send via email    <img src="~/images/email.svg" type="image/x-icon" />
+                            </button>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Your email address</span>
+                                </div>
+                                <input id="email" type="text" class="form-control">
+
+                            </div>
+                            @*<input style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px;" type="text" id="email" />*@
+
+                        </div>
                     </div>
-                </div>
-                <div class="col-1"></div>
+                    <div class="col-1"></div>
+             
+
+
+              
+
+
 
 
 
@@ -65,56 +157,43 @@
 
 </body>
 
-<style>
-    #pred1 {
-        margin-left: 0%;
-        width: 520px;
-        height: 150px;
-        /* left: 239px;*/
-        top: 310px;
-        background: #FFE49E;
-        box-shadow: 0px 4px 4px rgba(167, 111, 13, 0.52);
-        border-radius: 60px;
-    }
-    #pred2 {
-        margin-left: 0%;
-        width: 480px;
-        height: 140px;
-        left: 240px;
-        top: 478px;
-        background: #CDB4FF;
-        box-shadow: 0px 4px 4px rgba(80, 6, 106, 0.25);
-        border-radius: 60px;
-    }
-    #pred3 {
-        margin-left: 0%;
-        width: 440px;
-        height: 147px;
-        left: 239px;
-        top: 636px;
-        background: #9FE2FF;
-        box-shadow: 0px 4px 4px #54C4F8;
-        border-radius: 60px;
-    }
-    #pred4 {
-        margin-left: 0%;
-        width: 400px;
-         height: 121px;
-        left: 239px;
-        top: 801px;
-        background: #E1FFBB;
-        box-shadow: 0px 4px 4px rgba(20, 146, 25, 0.25);
-        border-radius: 60px;
-    }
-    #pred5 {
-        margin-left: 0%;
-        width: 370px;
-        height: 112px;
-        left: 239px;
-        top: 940px;
-        background: #FFC8C8;
-        box-shadow: 0px 4px 4px rgba(187, 22, 0, 0.25);
-        border-radius: 60px;
-    }
+<script>
+    $("#emailbut").click(function (e) {
+        debugger;
+        e.preventDefault();
+       var saveUrl = '@Url.Action("CallEmail")';
+       var prediction1 = "@ViewBag.pred1";
+      
+       var prediction2 = "@ViewBag.pred2";
+       var prediction3 = "@ViewBag.pred3";
+       var prediction4 = "@ViewBag.pred4";
+        var prediction5 = "@ViewBag.pred5";
 
-</style>
+
+        var email = $("#email").val();
+        $.ajax({
+        url: saveUrl,
+            data: {
+                'prediction1': prediction1, 'prediction2': prediction2, 'prediction3': prediction3, 'prediction4': prediction4,
+            'prediction5':prediction5,'email':email},
+        method: "POST",
+        error: function () {
+        alert("Ajax call failed");
+        }
+        }).done(function () {
+
+        //if (data.BookingStatus == "OverBooked") {
+        //alert("Oops! The restaurant has been overbooked. Please select some other date or time.");
+        //}
+        //else if (data.BookingStatus == "Already Booked")
+        //{ alert("You have already made a booking at this restaurant for the given time.");}
+        //else { alert("Booking done successfully! An email confirming your reservation has been sent to your email id."); }
+
+
+        })
+
+
+        });
+
+</script>
+

@@ -6,12 +6,14 @@ using Iteration_2.Models;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 
+using SelectPdf;
+
 namespace Iteration_2.Controllers
 {
     public class SearchController : Controller
     {
         // GET: Search
-        AnalysisDBEntities1 ds = new AnalysisDBEntities1();
+        webModel ds = new webModel();
       
         public ActionResult Analysis()
         {
@@ -34,6 +36,7 @@ namespace Iteration_2.Controllers
         }
         public ActionResult Email()
         {
+
             return View();
         }
         [HttpPost]
@@ -92,7 +95,7 @@ namespace Iteration_2.Controllers
                 return RedirectToAction("Analysis", "Search");
             }
 
-            foreach (var y in ds.Prediction)
+            foreach (var y in ds.prediction)
             {
                 if (y.gender == genderID && y.age_group_10y == ageID && y.english_proficiency == englishID && y.highest_education == highest_education)
                 {
@@ -107,6 +110,26 @@ namespace Iteration_2.Controllers
         
             return View();
         }
+
+       [HttpPost]
+        //public ActionResult SubmitAction(FormCollection collection)
+        //{
+        //    //Code below is using the SendPDF component to convert the webpage to PDF.
+        //    HtmlToPdf converter = new HtmlToPdf();
+        //    string url = string.Format("{0}://{1}{2}", System.Web.HttpContext.Current.Request.Url.Scheme, System.Web.HttpContext.Current.Request.Url.Authority, Url.Content("~/Search/Result")); 
+        //    PdfDocument doc = converter.ConvertUrl(url);
+        //    // save pdf document
+        //    byte[] pdf = doc.Save();
+
+        //    // close pdf document
+        //    doc.Close();
+
+        //    // return resulted pdf document
+        //    FileResult fileResult = new FileContentResult(pdf, "application/pdf");
+        //    fileResult.FileDownloadName = "ShridharChart.pdf";
+        //    return fileResult;
+        //}
+
         public void CallEmail(string prediction1, string prediction2, string prediction3, string prediction4, string prediction5,
             string email)
         {
@@ -114,11 +137,12 @@ namespace Iteration_2.Controllers
 
         }
 
-        private static async Task Execute(string prediction1, string prediction2, string prediction3, string prediction4, string prediction5
+
+        static async Task Execute(string prediction1, string prediction2, string prediction3, string prediction4, string prediction5
             , string email)
         {
             //The below code is using the sendgrid API to send an e-mail. Code is taken from the sendgrid website.
-            String UNIQUE_KEY = "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";
+            String UNIQUE_KEY = "";
             var client = new SendGridClient(UNIQUE_KEY);
             var from = new EmailAddress("hopmekiwiprod@gmail.com", "Your Predictions!");
             var to = new EmailAddress(email, "");

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/hopmedbserver/databases/Iteration 2_db",
+      "type": "mssql.azure",
+      "connectionId": "AnalysisDBEntities1",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

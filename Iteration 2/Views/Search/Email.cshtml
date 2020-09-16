@@ -4,6 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+</head>
+
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
     <div class="site-section">
 
@@ -17,7 +22,8 @@
     $("#email").click(function (e) {
         debugger;
         e.preventDefault();
-       var saveUrl = '@Url.Action("CallEmail", "Chart")';
+       var saveUrl = '@Url.Action("CallEmail")';
+       var prediction1 = @ViewBag.pred1;
        var prediction1 = @ViewBag.pred1;
        var prediction2 = @ViewBag.pred2;
        var prediction3 = @ViewBag.pred3;
