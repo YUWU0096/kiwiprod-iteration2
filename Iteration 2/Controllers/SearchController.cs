@@ -7,6 +7,10 @@ using SendGrid;
 using SendGrid.Helpers.Mail;
 
 using SelectPdf;
+//using Syncfusion.Pdf;
+//using Syncfusion.Pdf.Graphics;
+//using System.Drawing;
+
 
 namespace Iteration_2.Controllers
 {
@@ -39,6 +43,12 @@ namespace Iteration_2.Controllers
 
             return View();
         }
+        public ActionResult Result()
+        {
+
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Result(FormCollection Fc)
 
@@ -110,25 +120,38 @@ namespace Iteration_2.Controllers
         
             return View();
         }
-
-       [HttpPost]
-        //public ActionResult SubmitAction(FormCollection collection)
+        //public ActionResult CreateDocument()
         //{
-        //    //Code below is using the SendPDF component to convert the webpage to PDF.
-        //    HtmlToPdf converter = new HtmlToPdf();
-        //    string url = string.Format("{0}://{1}{2}", System.Web.HttpContext.Current.Request.Url.Scheme, System.Web.HttpContext.Current.Request.Url.Authority, Url.Content("~/Search/Result")); 
-        //    PdfDocument doc = converter.ConvertUrl(url);
-        //    // save pdf document
-        //    byte[] pdf = doc.Save();
+        //Create an instance of PdfDocument.
 
-        //    // close pdf document
-        //    doc.Close();
 
-        //    // return resulted pdf document
-        //    FileResult fileResult = new FileContentResult(pdf, "application/pdf");
-        //    fileResult.FileDownloadName = "ShridharChart.pdf";
-        //    return fileResult;
+
+        //    using (Syncfusion.Pdf.PdfDocument document = new Syncfusion.Pdf.PdfDocument())
+        //    {
+        //        //Add a page to the document
+        //        Syncfusion.Pdf.PdfPage page = document.Pages.Add();
+
+        //        //Create PDF graphics for the page
+        //        PdfGraphics graphics = page.Graphics;
+
+        //        //Set the standard font
+        //        Syncfusion.Pdf.Graphics.PdfFont font = new Syncfusion.Pdf.Graphics.PdfStandardFont(PdfFontFamily.Helvetica, 20);
+
+        //        //Draw the text
+        //        graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+
+        //        // Open the document in browser after saving it
+        //        document.Save("Output.pdf", HttpContext.ApplicationInstance.Response, HttpReadType.Save);
+        //    }
+        //    return View();
         //}
+     
+
+
+
+
+
+
 
         public void CallEmail(string prediction1, string prediction2, string prediction3, string prediction4, string prediction5,
             string email)
