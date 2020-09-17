@@ -25,7 +25,7 @@ namespace Iteration_2.Controllers
 
             return View();
         }
-        public ActionResult About()
+        public ActionResult Homepage()
         {
 
 

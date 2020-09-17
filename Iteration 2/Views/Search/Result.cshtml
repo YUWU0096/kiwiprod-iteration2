@@ -70,87 +70,86 @@
         <div class="container">
 
             <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
-              
 
-                    <div class="col-1"></div>
-                    <ResultTitle> Areas you will most likely be employed in:</ResultTitle><br /><br />
-                    <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 col-xs-10 mr-auto">
-                        <div class="container" id="pred1">
-                            <br />
-                            <resultitle>Prediction 1</resultitle><br />
-                            <resultpredict>@ViewBag.pred1  </resultpredict><br />
-                        </div><br />
-                        <div class="container" id="pred2">
-                            <br />
-                            <resultitle>Prediction 2</resultitle><br />
-                            <resultpredict> @ViewBag.pred2 <br /> </resultpredict><br />
-                        </div><br />
+                <div class="container">
+                    <ResultTitle> Areas you will most likely be employed in: </ResultTitle><br /><br />
+                </div>
 
-                        <div class="container" id="pred3">
-                            <br />
-                            <resultitle>Prediction 3</resultitle><br />
-                            <resultpredict>  @ViewBag.pred3 <br /> </resultpredict><br />
-                        </div><br />
+                <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 col-xs-10 mr-auto">
 
-                        <div class="container" id="pred4">
-                            <br />
-                            <resultitle>Prediction 4</resultitle><br />
-                            <resultpredict>  @ViewBag.pred4 <br /> </resultpredict><br />
-                        </div><br />
-                        <div class="container" id="pred5">
-                            <br />
-                            <resultitle>Prediction 5</resultitle><br />
-                            <resultpredict>  @ViewBag.pred5 <br /> </resultpredict><br />
-                        </div>
+                    <div class="container" id="pred1">
+                        <br />
+                        <resultitle>Prediction 1</resultitle><br />
+                        <resultpredict>@ViewBag.pred1  </resultpredict><br />
+                    </div><br />
+                    <div class="container" id="pred2">
+                        <br />
+                        <resultitle>Prediction 2</resultitle><br />
+                        <resultpredict> @ViewBag.pred2 <br /> </resultpredict><br />
+                    </div><br />
 
+                    <div class="container" id="pred3">
+                        <br />
+                        <resultitle>Prediction 3</resultitle><br />
+                        <resultpredict>  @ViewBag.pred3 <br /> </resultpredict><br />
+                    </div><br />
+
+                    <div class="container" id="pred4">
+                        <br />
+                        <resultitle>Prediction 4</resultitle><br />
+                        <resultpredict>  @ViewBag.pred4 <br /> </resultpredict><br />
+                    </div><br />
+                    <div class="container" id="pred5">
+                        <br />
+                        <resultitle>Prediction 5</resultitle><br />
+                        <resultpredict>  @ViewBag.pred5 <br /> </resultpredict><br />
                     </div>
 
-                    <div class="col-xl-5 col-lg-5  align-content-start">
-                        <img class="img-fluid pt-6" src="~/images/3304458 1.png" alt="Image" />
-                        @*<div style="margin-top:20px">
-                @{Html.BeginForm("SubmitAction", "Search", FormMethod.Post);
-                    {
+                </div>
+
+                <div class="col-xl-5 col-lg-5  align-content-start" data-aos="fade-left">
+                    <img class="img-fluid pt-6" src="~/images/3304458 1.png" alt="Image" />
+                    @*<div style="margin-top:20px">
+                    @{Html.BeginForm("SubmitAction", "Search", FormMethod.Post);
+                        {
 
 
-                            <button name="SubmitAction" type="submit" class="btn btn-primary mr-2 mb-4">Download in pdf  ➔</button>
+                                <button name="SubmitAction" type="submit" class="btn btn-primary mr-2 mb-4">Download in pdf  ➔</button>
+
+                        }
 
                     }
-
-                }
-                <a href="#" class="btn btn-primary mr-2 mb-4">Download in pdf  ➔</a>
-            </div>*@
+                    <a href="#" class="btn btn-primary mr-2 mb-4">Download in pdf  ➔</a>
+                </div>*@
 
 
-                        <div style="margin-top:20px">
+                    <div style="margin-top:20px">
 
-                            <button id="emailbut" type="button" class="btn btn-primary mr-2 mb-4 flip">
-                                Send via email    <img src="~/images/email.svg" type="image/x-icon" />
-                            </button>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Your email address</span>
-                                </div>
-                                <input id="email" type="text" class="form-control">
-
+                        <button id="emailbut" type="button" class="btn btn-primary mr-2 mb-4 flip">
+                            Send via email    <img src="~/images/email.svg" type="image/x-icon" />
+                        </button>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Your email address</span>
                             </div>
-                            @*<input style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px;" type="text" id="email" />*@
+                            <input id="email" type="text" class="form-control">
 
                         </div>
+                        @*<input style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px;" type="text" id="email" />*@
+
                     </div>
-                    <div class="col-1"></div>
-             
-
-
-              
+                </div>
+                <div class="col-1"></div>
 
 
 
-
-
+            </div><br />
+            <div class="row justify-content-center">
+                <a href="~/Search/Articles" class="btn btn-primary mr-2 mb-2">Go to Articles  ➔</a>
             </div>
-
         </div>
 
+     
 
     </div>
        

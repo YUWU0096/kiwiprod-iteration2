@@ -151,7 +151,7 @@ namespace Iteration_2.Controllers
             "<p>" + "hopMe-kiwiprod <br><br> Hello! Your result is ready based on our Employability Solution. <br> <br> Areas you will most likely be employed in:<br>"
                 + "Prediction 1- " + prediction1 + "<br>" + "Prediction 2- " + prediction2 + "<br>" + "Prediction 3- " + prediction3 +
                 "<br>" + "Prediction 4- " + prediction4 + "<br>" + "Prediction 5- " + prediction5 + "<br> <br>" +
-                "Read related articles:www.google.com" + "<br><br>" + "Thank you for trying out our AI model. <br> <br> hopMe truly wishes you" +
+                "Read related articles:https://iteration2.hopme-kiwiprod.ml/Search/Articles" + "<br><br>" + "Thank you for trying out our AI model. <br> <br> hopMe truly wishes you" +
                 "all the best with your career journey!<br><br>" + "Best Regards,<br>Kiwiprod<br>" +
                 "</p>";
 
