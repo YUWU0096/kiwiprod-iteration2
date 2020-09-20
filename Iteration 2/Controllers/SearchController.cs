@@ -145,14 +145,12 @@ namespace Iteration_2.Controllers
         //    }
         //    return View();
         //}
-     
 
 
 
 
 
-
-
+            
         public void CallEmail(string prediction1, string prediction2, string prediction3, string prediction4, string prediction5,
             string email)
         {
