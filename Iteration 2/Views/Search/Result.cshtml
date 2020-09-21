@@ -161,32 +161,43 @@
     $("#emailbut").click(function (e) {
         debugger;
         e.preventDefault();
-       var saveUrl = '@Url.Action("CallEmail")';
-       var prediction1 = "@ViewBag.pred1";
-
-       var prediction2 = "@ViewBag.pred2";
-       var prediction3 = "@ViewBag.pred3";
-       var prediction4 = "@ViewBag.pred4";
-        var prediction5 = "@ViewBag.pred5";
-
         var email = $("#email").val();
+        var isValidEmail = true;
+        ValidateEmail(email);
+        function ValidateEmail(email)
+        {
+            debugger;
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+             if (!(email.match(mailformat))) {
+            debugger;
+                 alert("Invalid email address! Please input a valid email address.");
+                 isValidEmail = false;
 
-        $.ajax({
-        url: saveUrl,
-            data: {
-                'prediction1': prediction1, 'prediction2': prediction2, 'prediction3': prediction3, 'prediction4': prediction4,
-            'prediction5':prediction5,'email':email},
-        method: "POST",
-        error: function () {
-        alert("Ajax call failed");
         }
-        }).done(function () {
+        }
+        if (isValidEmail) {
+            var saveUrl = '@Url.Action("CallEmail")';
+            var prediction1 = "@ViewBag.pred1";
+            var prediction2 = "@ViewBag.pred2";
+            var prediction3 = "@ViewBag.pred3";
+            var prediction4 = "@ViewBag.pred4";
+            var prediction5 = "@ViewBag.pred5";
 
-
-        alert("Email sent!.");
-        })
+            $.ajax({
+                url: saveUrl,
+                data: {
+                    'prediction1': prediction1, 'prediction2': prediction2, 'prediction3': prediction3, 'prediction4': prediction4,
+                    'prediction5': prediction5, 'email': email
+                },
+                method: "POST",
+                error: function () {
+                    alert("Ajax call failed");
+                }
+            }).done(function () {
+                alert("Email sent!");
+            })
+        }
     });
-
 </script>
 
 
