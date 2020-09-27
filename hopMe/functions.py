@@ -48,4 +48,3 @@ def get_employment_status(emp_df):
 def topn_predictions(ml, df, n=5):
     predictions = ml.predict_proba(df)
     return [ml.classes_[x] for x in np.argsort(predictions, axis=1)[:, :5]]
-

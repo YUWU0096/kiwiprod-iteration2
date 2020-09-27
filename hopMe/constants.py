@@ -91,3 +91,19 @@ english_index_values = {
     "Speaks English Very Well": 3,
     "Speaks English Only": 4
 }
+# field of study string to value
+field_study_values = {
+    'NO FIELD OF STUDY': 0,
+    'NATURAL AND PHYSICAL SCIENCES': 1,
+    'INFORMATION TECHNOLOGY': 2,
+    'ENGINEERING AND RELATED TECHNOLOGIES': 3,
+    'ARCHITECTURE AND BUILDING': 4,
+    'AGRICULTURE, ENVIRONMENTAL AND RELATED STUDIES': 5,
+    'HEALTH': 6,
+    'EDUCATION': 7,
+    'MANAGEMENT AND COMMERCE': 8,
+    'SOCIETY AND CULTURE': 9,
+    'CREATIVE ARTS': 10,
+    'FOOD, HOSPITALITY AND PERSONAL SERVICES': 11,
+    'MIXED FIELD PROGRAMMES': 12
+}

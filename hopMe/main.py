@@ -1,11 +1,11 @@
 import itertools
-
+import csv
 from functions import *
 # Classifier
 from sklearn.svm import SVC
 # export sklearn model
 from skl2onnx import convert_sklearn
-from skl2onnx.common.data_types import FloatTensorType
+# from skl2onnx.common.data_types import FloatTensorType
 from skl2onnx.common.data_types import Int32TensorType
 from constants import *
 
@@ -25,23 +25,33 @@ if __name__ == '__main__':
     english_profeciency_index.columns = ["degree", "value"]
     english_profeciency_index.to_csv("english_profeciency_index.csv", index=True, index_label='id')
 
-    ## load the definition of OCCP from abs.gov.au
+    # field of study definitions and index
+    qalfp_df = pd.read_excel("australian standard classification of education (asced) structures.xls", sheet_name="Table 2").iloc[5:, : 2].dropna()
+    qalfp_df.columns = ['code', 'name']
+    qalfp_df.code = qalfp_df.code.astype(str)
+    qalfp_df = qalfp_df.append([{'code': 'XX', 'name': 'NO FIELD OF STUDY'}], ignore_index=True)
+    qalfp_dict = qalfp_df.set_index('code').to_dict()['name']
+    # export field of study values
+    field_study_index = pd.concat([pd.DataFrame(field_study_values.keys()), pd.DataFrame(field_study_values.values())], axis=1)
+    field_study_index.columns = ["degree", "value"]
+    field_study_index.to_csv("field_study_index.csv", index=True, index_label='id', sep=',', escapechar='\\', quoting=csv.QUOTE_NONE)
+
+    # load the definition of OCCP from abs.gov.au
     # load from abs.gov.au
     occp_anzsco_df = pd.read_excel(
         "https://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1220.0%20ANZSCO%20Version%201.2%20Structure%20v3.xls&1220.0&Data%20Cubes"
         "&6A8A6C9AC322D9ABCA257B9E0011956C&0&2013,%20Version%201.2&05.07.2013&Latest",
         sheet_name="Table 6").iloc[list(range(6, 1372, 1)), :].dropna().reset_index(drop=True)
-    # load local file
-    # occp_anzsco_df = pd.read_excel("1220.0 ANZSCO Version 1.2 Structure v3.xls", sheet_name="Table 6").iloc[list(range(5, 1372, 1)), : ].dropna().reset_index(drop=True)
-    ## reformat the occp anzsco dataframe
+    # load local file occp_anzsco_df = pd.read_excel("1220.0 ANZSCO Version 1.2 Structure v3.xls", sheet_name="Table 6").iloc[list(range(5, 1372, 1)),\
+    # : ].dropna().reset_index(drop=True) reformat the occp anzsco dataframe
     occp_anzsco_df.columns = ['code', 'name']
     occp_anzsco_dict = occp_anzsco_df.set_index('code').to_dict()['name']
 
     # occp_anzsco_df = pd.read_excel("1220.0 ANZSCO Version 1.2 Structure v3.xls", sheet_name="Table 6").iloc[list(range(5, 1372, 1)), :] \
     #     .dropna().reset_index(drop=True)
     # reformat anzsco dictionary
-    occp_anzsco_df.columns = ['code', 'name']
-    occp_anzsco_dict = occp_anzsco_df.set_index('code').to_dict()['name']
+    #occp_anzsco_df.columns = ['code', 'name']
+    #occp_anzsco_dict = occp_anzsco_df.set_index('code').to_dict()['name']
 
     # Data Exploration & Wrangling
     # Extract features and transform to usable format
@@ -55,7 +65,7 @@ if __name__ == '__main__':
     print("Processing ")
 
     # extract labels for machine training
-    au_micro = au_micro[["AGEP", "ENGLP", "HEAP", "HSCP", "LFSP", "INDP", "OCCP", "SEXP"]]
+    au_micro = au_micro[["AGEP", "ENGLP", "HEAP", "HSCP", "LFSP", "INDP", "OCCP", "SEXP", "QALFP"]]
 
     # labour force status LFSP, 6 and X stands for not in labour force and not stated, which will not be used
     # ultimately, someone who is actively not looking for employment, is not employed
@@ -91,17 +101,22 @@ if __name__ == '__main__':
     au_micro["is_employed"] = get_employment_status(au_micro)
     au_micro = au_micro[au_micro["is_employed"] == True]
 
+    # convert field of study values
+    au_micro.QALFP.replace(np.nan, 'XX', inplace=True)
+    au_micro.QALFP = au_micro.QALFP.apply(lambda x: x[:2])
+    au_micro.QALFP.replace(qalfp_dict, inplace=True)
+    au_micro['field_of_study'] = au_micro.QALFP.replace(field_study_values)
+
     # convert occupation code to text
     # remove illegal values
     au_micro = au_micro.loc[(au_micro.OCCP.notna()) & (au_micro.OCCP != "XXXXXX")]
     au_micro.OCCP = au_micro.OCCP.apply(lambda x: int(x))
     au_micro = au_micro.loc[au_micro.OCCP.isin(occp_anzsco_dict.keys())]
-    print(occp_anzsco_dict)
     au_micro['occupation'] = au_micro.OCCP.replace(occp_anzsco_dict)
 
     # select needed labels only
-    au_micro = au_micro[["gender", "age_group_10y", "english_proficiency", "highest_education",
-                         "occupation"]].reset_index(drop=True)
+    au_micro = au_micro[["gender", "age_group_10y", "english_proficiency", "highest_education", 'field_of_study', "occupation"]].\
+        reset_index(drop=True)
 
     print("Data wrangling complete!")
 
@@ -121,15 +136,15 @@ if __name__ == '__main__':
     # use a database with all input permutations and corresponding outputs
     # create a dataframe of all permutations
     au_inputs = pd.DataFrame(list(itertools.product(*[au_micro.gender.unique(),
-                                                      au_micro.age_group_10y.unique(),
+                                                      range(au_micro.age_group_10y.min(), au_micro.age_group_10y.max() + 1),
                                                       au_micro.english_proficiency.unique(),
-                                                      range(0,26)])),
-                             columns=["gender", "age_group_10y", "english_proficiency", "highest_education"])
+                                                      range(0, 26),
+                                                      range(0, 13)])),
+                             columns=["gender", "age_group_10y", "english_proficiency", "highest_education", "field_of_study"])
     # assign outputs to inputs
-    # the variables are gender, age_group_10y, english_proficiency, highest_education
     list_pred = topn_predictions(ml_model, au_inputs, n=5)
     all_outputs = pd.DataFrame(list(map(np.ravel, list_pred)), columns=['pred_1', 'pred_2', 'pred_3', 'pred_4', 'pred_5'])
     # export the results to be used in web backend as a database
     input_predict = pd.concat([au_inputs, all_outputs], axis=1)
-    input_predict.to_csv('predications.csv', index=True, index_label='id')
-    print("Work around database file exported!")
+    input_predict.to_csv('predictions.csv', index=True, index_label='id')
+    print("Work-around database exported!")
