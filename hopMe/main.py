@@ -34,7 +34,9 @@ if __name__ == '__main__':
     # export field of study values
     field_study_index = pd.concat([pd.DataFrame(field_study_values.keys()), pd.DataFrame(field_study_values.values())], axis=1)
     field_study_index.columns = ["degree", "value"]
-    field_study_index.to_csv("field_study_index.csv", index=True, index_label='id', sep=',', escapechar='\\', quoting=csv.QUOTE_NONE)
+    field_study_index.to_csv("field_study_index.csv", index=True, index_label='id')
+    #converter to sql do not recognize / escape symbol
+    #field_study_index.to_csv("field_study_index.csv", index=True, index_label='id', sep=',', escapechar='\\', quoting=csv.QUOTE_NONE)
 
     # load the definition of OCCP from abs.gov.au
     # load from abs.gov.au
@@ -45,6 +47,9 @@ if __name__ == '__main__':
     # load local file occp_anzsco_df = pd.read_excel("1220.0 ANZSCO Version 1.2 Structure v3.xls", sheet_name="Table 6").iloc[list(range(5, 1372, 1)),\
     # : ].dropna().reset_index(drop=True) reformat the occp anzsco dataframe
     occp_anzsco_df.columns = ['code', 'name']
+    # remove specific abbreviations unuseful for job searching
+    occp_anzsco_df.name = occp_anzsco_df.name.apply(lambda x: x.replace(' nfd', ''))
+    occp_anzsco_df.name = occp_anzsco_df.name.apply(lambda x: x.replace(' nec', ''))
     occp_anzsco_dict = occp_anzsco_df.set_index('code').to_dict()['name']
 
     # occp_anzsco_df = pd.read_excel("1220.0 ANZSCO Version 1.2 Structure v3.xls", sheet_name="Table 6").iloc[list(range(5, 1372, 1)), :] \
