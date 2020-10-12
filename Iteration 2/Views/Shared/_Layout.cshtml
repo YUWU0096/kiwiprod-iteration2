@@ -73,7 +73,11 @@
         </div>
         <div class="site-mobile-menu-body"></div>
     </div>
+    <div class="container">
+        <div id="google_translate_element"></div>
 
+    </div>
+   
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
         <div class="container">
@@ -130,12 +134,21 @@
                 $('html, body').animate({ scrollTop: $(window).height() / 1.5 }, 'slow');
             });
         </script>*@
-   
+
     <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous"></script-->
     <script src="~/js/aos.js"></script>
     <script src="~/js/jquery.fancybox.min.js"></script>
     <script src="~/js/jquery.sticky.js"></script>
     <script src="~/js/main.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        //javescript for translate function
+    </script>
+    <script type="text/javascript">
+        //javescript for translate function
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
